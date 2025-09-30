@@ -1,30 +1,26 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app" class="min-h-screen flex flex-col relative">
+    <cat-header/>
+    <main class="flex-1">
+      <Hero/>
+      <section class="main-container">
+        <div class="pt-8 md:pt-10 pb-15 md:pb-18">
+          <cat-card class="max-w-204 mx-auto">
+            <stats/>
+            <staking-table/>
+          </cat-card>
+        </div>
+      </section>
+    </main>
+    <cat-footer/>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup>
+import CatHeader from './components/common/header/CatHeader.vue';
+import Hero from './components/home/Hero.vue';
+import Stats from './components/home/stats/Stats.vue';
+import StakingTable from './components/home/staking/StakingTable.vue';
+import CatFooter from './components/common/CatFooter.vue';
+import CatCard from "./components/ui/CatCard.vue";
+</script>
